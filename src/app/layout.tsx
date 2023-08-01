@@ -5,9 +5,8 @@ import { Metadata } from 'next'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-    title: 'JITERA | Build the Next Era of Software Development',
-    description:
-        'JITERA is a software business partner in Singapore and Japan. We develop and utilize a low-code platform that enables us to build software apps faster than ever.',
+    title: 'Messenger Clone',
+    description: 'Messenger clone',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

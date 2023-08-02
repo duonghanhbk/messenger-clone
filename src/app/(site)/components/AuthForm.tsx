@@ -3,6 +3,9 @@
 import { useCallback, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { BsGit, BsGoogle } from 'react-icons/bs'
+import axios from 'axios'
+import { toast } from 'react-hot-toast'
+import { signIn } from 'next-auth/react'
 import Input from '@/app/components/inputs/Input'
 import Button from '@/app/components/Button'
 import AuthSocialButton from './AuthSocialButton'
@@ -32,10 +35,22 @@ const AuthForm = () => {
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true)
         if (variant === 'REGISTER') {
-            // Axios call register
+            axios
+                .post('/api/register', data)
+                .catch(() => toast.error('Something went wrong!'))
+                .finally(() => setIsLoading(false))
         }
         if (variant === 'LOGIN') {
-            // NextAuth Signin
+            signIn('credentials', { ...data, redirect: false })
+                .then((callabck) => {
+                    if (callabck?.error) {
+                        toast.error('Invalid credentials')
+                    }
+                    if (callabck?.ok && !callabck?.error) {
+                        toast.success('Logged in!')
+                    }
+                })
+                .finally(() => setIsLoading(false))
         }
     }
 
@@ -49,7 +64,14 @@ const AuthForm = () => {
                 <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                     {variant === 'REGISTER' && <Input id="name" label="Name" register={register} errors={errors} />}
                     <Input id="email" label="Email" register={register} errors={errors} disabled={isLoading} />
-                    <Input id="password" label="Password" register={register} errors={errors} disabled={isLoading} />
+                    <Input
+                        id="password"
+                        label="Password"
+                        type="password"
+                        register={register}
+                        errors={errors}
+                        disabled={isLoading}
+                    />
                     <Button disabled={isLoading} fullwidth type="submit">
                         {variant === 'LOGIN' ? 'Sign in' : 'Register'}
                     </Button>

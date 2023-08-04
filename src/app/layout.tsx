@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
 import ToasterContext from '@/app/context/ToasterContext'
+import AuthContext from './context/AuthContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,8 +18,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <meta name="theme-color" content="#ffffff" />
             </head>
             <body className={inter.className}>
-                <ToasterContext />
-                {children}
+                <AuthContext>
+                    <ToasterContext />
+                    {children}
+                </AuthContext>
             </body>
         </html>
     )

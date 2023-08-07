@@ -1144,6 +1144,33 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     "to-fast-properties" "^2.0.0"
 
+"@cloudinary-util/url-loader@^3.10.0":
+  "integrity" "sha512-RNp6WayU6e5ikA7yCRqNhp0lOwLl82vLco9EwpES2si6Hb+g9yEaeTYvobD44ISQeJUnPl6e1c/AEYVSjfzwrg=="
+  "resolved" "https://registry.npmjs.org/@cloudinary-util/url-loader/-/url-loader-3.10.0.tgz"
+  "version" "3.10.0"
+  dependencies:
+    "@cloudinary-util/util" "2.2.1"
+    "@cloudinary/url-gen" "^1.10.2"
+
+"@cloudinary-util/util@^2.2.1", "@cloudinary-util/util@2.2.1":
+  "integrity" "sha512-MEIqn5WtPP3mxSMTNNfpqlGS1UquAXcjmVdY/t/edD/ZWVjI85viBiOMIuF0W6n6UF5gTstLymfQNYx0YO/GZg=="
+  "resolved" "https://registry.npmjs.org/@cloudinary-util/util/-/util-2.2.1.tgz"
+  "version" "2.2.1"
+
+"@cloudinary/transformation-builder-sdk@^1.5.1":
+  "integrity" "sha512-7pTKgyrX49T3Qk0+bE/RN7bijGVRPusDXjRHJyO5a7H6CnL1sZ/TvTMAKvXweFLTOpWzWFW6nS0Bah3kBvTb7w=="
+  "resolved" "https://registry.npmjs.org/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.5.1.tgz"
+  "version" "1.5.1"
+  dependencies:
+    "@cloudinary/url-gen" "^1.7.0"
+
+"@cloudinary/url-gen@^1.10.2", "@cloudinary/url-gen@^1.7.0":
+  "integrity" "sha512-j5nYZOMeB4Ht1W8C6RXEvVNJVME1sObxtdgtnJDiGcBQmwI1EsCedSQSzkJoely3jhx+yI6WGCLGniF/PE+Idw=="
+  "resolved" "https://registry.npmjs.org/@cloudinary/url-gen/-/url-gen-1.11.1.tgz"
+  "version" "1.11.1"
+  dependencies:
+    "@cloudinary/transformation-builder-sdk" "^1.5.1"
+
 "@commitlint/cli@^17.6.6":
   "integrity" "sha512-sTKpr2i/Fjs9OmhU+beBxjPavpnLSqZaO6CzwKVq2Tc4UYVTMFgpKOslDhUBVlfAUBfjVO8ParxC/MXkIOevEA=="
   "resolved" "https://registry.npmjs.org/@commitlint/cli/-/cli-17.6.6.tgz"
@@ -1758,6 +1785,13 @@
   "version" "5.1.0"
   dependencies:
     "@hapi/hoek" "^9.0.0"
+
+"@headlessui/react@^1.7.16":
+  "integrity" "sha512-2MphIAZdSUacZBT6EXk8AJkj+EuvaaJbtCyHTJrPsz8inhzCl7qeNPI1uk1AUvCgWylVtdN8cVVmnhUDPxPy3g=="
+  "resolved" "https://registry.npmjs.org/@headlessui/react/-/react-1.7.16.tgz"
+  "version" "1.7.16"
+  dependencies:
+    "client-only" "^0.0.1"
 
 "@humanwhocodes/config-array@^0.11.10":
   "integrity" "sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ=="
@@ -3207,7 +3241,7 @@
     "slice-ansi" "^5.0.0"
     "string-width" "^5.0.0"
 
-"client-only@0.0.1":
+"client-only@^0.0.1", "client-only@0.0.1":
   "integrity" "sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA=="
   "resolved" "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
   "version" "0.0.1"
@@ -6047,6 +6081,14 @@
     "preact-render-to-string" "^5.1.19"
     "uuid" "^8.3.2"
 
+"next-cloudinary@^4.17.1":
+  "integrity" "sha512-d3XZrz/u6GSrXKeWuypDwFj/YIw/kztau8yI3sZbapIAqrgrXfFF3MwQCGFUeCdNsTDLoDWZK8rQfOZ1OKJ5Fw=="
+  "resolved" "https://registry.npmjs.org/next-cloudinary/-/next-cloudinary-4.17.1.tgz"
+  "version" "4.17.1"
+  dependencies:
+    "@cloudinary-util/url-loader" "^3.10.0"
+    "@cloudinary-util/util" "^2.2.1"
+
 "next-superjson-plugin@^0.5.9":
   "integrity" "sha512-xEU+SvrSDk8PGAQ2TrJM/OhkZBcWjWWqSjpUtlxTAI9ovTjKBxxQumcFt7oXzoBLJsRtq0BWTHrcnzL/9izXPQ=="
   "resolved" "https://registry.npmjs.org/next-superjson-plugin/-/next-superjson-plugin-0.5.9.tgz"
@@ -6054,7 +6096,7 @@
   dependencies:
     "hoist-non-react-statics" "^3.3.2"
 
-"next@^12.2.5 || ^13", "next@^13", "next@13.4.7":
+"next@^12 || ^13", "next@^12.2.5 || ^13", "next@^13", "next@13.4.7":
   "integrity" "sha512-M8z3k9VmG51SRT6v5uDKdJXcAqLzP3C+vaKfLIAM0Mhx1um1G7MDnO63+m52qPdZfrTFzMZNzfsgvm3ghuVHIQ=="
   "resolved" "https://registry.npmjs.org/next/-/next-13.4.7.tgz"
   "version" "13.4.7"
@@ -6775,7 +6817,7 @@
     "shell-quote" "^1.6.1"
     "ws" "^7"
 
-"react-dom@^17.0.2 || ^18", "react-dom@^18.2.0", "react-dom@>=16", "react-dom@18.2.0":
+"react-dom@^16 || ^17 || ^18", "react-dom@^17.0.2 || ^18", "react-dom@^18.2.0", "react-dom@>=16", "react-dom@18.2.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
@@ -6870,7 +6912,7 @@
     "object-assign" "^4.1.1"
     "react-is" "^16.12.0 || ^17.0.0 || ^18.0.0"
 
-"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16", "react@18.2.0":
+"react@*", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17 || ^18", "react@^17.0.2 || ^18", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"

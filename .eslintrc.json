@@ -1,13 +1,10 @@
 {
-    "extends": [
-        "next",
-        "next/core-web-vitals",
-        "plugin:@typescript-eslint/recommended",
-        "prettier"
-    ],
+    "extends": ["next", "next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
     "plugins": ["prettier"],
     "rules": {
         "arrow-body-style": "off",
-        "prefer-arrow-callback": "off"
+        "prefer-arrow-callback": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
     }
 }

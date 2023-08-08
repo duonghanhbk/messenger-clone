@@ -9,12 +9,7 @@ import { CldUploadButton } from 'next-cloudinary'
 
 const ConversationForm = () => {
     const { conversationId } = useConversation()
-    const {
-        register,
-        handleSubmit,
-        setValue,
-        formState: { errors },
-    } = useForm<FieldValues>({
+    const { register, handleSubmit, setValue } = useForm<FieldValues>({
         defaultValues: {
             message: '',
         },
@@ -39,7 +34,7 @@ const ConversationForm = () => {
             <CldUploadButton options={{ maxFiles: 1 }} onUpload={handleUpload} uploadPreset="xw92rm6r" />
             <HiPhoto size={30} className="text-sky-500" />
             <form onSubmit={handleSubmit(onSubmit)} className="flex w-full items-center gap-2 lg:gap-4">
-                <MessageInput id="message" register={register} required placeholder="Write a message" errors={errors} />
+                <MessageInput id="message" register={register} required placeholder="Write a message" />
                 <button
                     type="submit"
                     className="cursor-pointer rounded-full bg-sky-500 p-2 transition hover:bg-sky-600"

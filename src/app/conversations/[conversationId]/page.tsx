@@ -12,7 +12,7 @@ interface IParams {
 const ConversationId = async ({ params }: { params: IParams }) => {
     const conversation = await getConversationById(params.conversationId)
     const messages = await getMessages(params.conversationId)
-    console.log('messages', messages)
+
     if (!conversation) {
         return (
             <div className="h-full lg:pl-80">

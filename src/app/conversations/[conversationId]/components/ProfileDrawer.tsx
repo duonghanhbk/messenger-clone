@@ -9,6 +9,7 @@ import { IoClose, IoTrash } from 'react-icons/io5'
 import Avatar from '@/app/components/Avatar'
 import ConfirmModal from './ConfirmModal'
 import AvatarGroup from '@/app/components/AvartarGroup'
+import useActiveList from '@/app/hooks/useActiveList'
 
 interface ProfileDrawerProps {
     isOpen: boolean
@@ -20,6 +21,9 @@ interface ProfileDrawerProps {
 const ProfileDrawer = ({ isOpen, onClose, data }: ProfileDrawerProps) => {
     const otherUser = useOtherUser(data)
     const [confirmOpen, setConfirmOpen] = useState(false)
+    const { members } = useActiveList()
+    const isActive = otherUser?.email ? members.indexOf(otherUser.email) !== -1 : false
+
     const joinedDate = useMemo(() => {
         return format(new Date(otherUser.createdAt), 'p')
     }, [otherUser.createdAt])
@@ -32,8 +36,8 @@ const ProfileDrawer = ({ isOpen, onClose, data }: ProfileDrawerProps) => {
         if (data?.isGroup) {
             return `${data?.users.length} members`
         }
-        return 'Active'
-    }, [data])
+        return isActive ? 'Active' : 'Offline'
+    }, [data, isActive])
 
     return (
         <>

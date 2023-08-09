@@ -69,7 +69,7 @@ const GroupChatModal = ({ isOpen, onClose, users }: GroupChatModalProps) => {
                                 label="Members"
                                 options={users.map((user) => ({
                                     value: user.id,
-                                    label: user.name,
+                                    label: user?.name,
                                 }))}
                                 onChange={(value) =>
                                     setValue('members', value, {

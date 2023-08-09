@@ -29,8 +29,8 @@ const SettingModal = ({ isOpen, onClose, currentUser }: SettingModalProps) => {
         formState: { errors },
     } = useForm<FieldValues>({
         defaultValues: {
-            name: currentUser.name,
-            image: currentUser.image,
+            name: currentUser?.name,
+            image: currentUser?.image,
         },
     })
 

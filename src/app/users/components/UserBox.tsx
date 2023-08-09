@@ -34,7 +34,7 @@ const UserBox = ({ data }: { data: User }) => {
                 <div className="min-w-0 flex-1">
                     <div className="focus:outline-none">
                         <div className="mb-1 flex items-center justify-between">
-                            <p className="text-sm font-medium text-gray-900">{data.name}</p>
+                            <p className="text-sm font-medium text-gray-900">{data?.name}</p>
                         </div>
                     </div>
                 </div>

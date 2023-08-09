@@ -9,7 +9,8 @@
         "checkTs": "tsc --noEmit",
         "lint-staged": "lint-staged",
         "format": "prettier --write 'src/**/*.{json,js,ts,tsx,md,mdx,css,html,scss}'",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "postinstall": "prisma generate"
     },
     "dependencies": {
         "@headlessui/react": "^1.7.16",

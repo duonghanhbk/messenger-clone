@@ -25,7 +25,7 @@ const AvatarGroup = ({ users = [] }: AvatarGroupProps) => {
                         }`
                     )}
                 >
-                    <Image alt="Avatar" src={user?.image || '/images/placeholder.jpeg'} fill />
+                    <Image alt="Avatar" src={user?.image || '/images/placeholder.jpeg'} fill sizes="21" />
                 </div>
             ))}
         </div>

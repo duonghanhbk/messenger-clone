@@ -5,8 +5,6 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
-import Image from 'next/image'
-import { CldUploadButton } from 'next-cloudinary'
 import { toast } from 'react-hot-toast'
 import Modal from '@/app/components/Modal'
 import Input from '@/app/components/inputs/Input'
@@ -71,7 +69,7 @@ const GroupChatModal = ({ isOpen, onClose, users }: GroupChatModalProps) => {
                                 label="Members"
                                 options={users.map((user) => ({
                                     value: user.id,
-                                    label: user.name,
+                                    label: user?.name,
                                 }))}
                                 onChange={(value) =>
                                     setValue('members', value, {
